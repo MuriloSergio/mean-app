@@ -4,6 +4,12 @@
     </div>
     <button class="btn btn-primary" data-ng-click="contatos.incrementar()">Novo</button>
     <p>Contatos cadastrados: <span data-ng-bind="contatos.total"></span></p>
+    <div class="form-group">
+        <input class="form-control" 
+               data-ng-model="contatos.filtro" 
+               type="search" 
+               placeholder="Nome" />
+    </div>
     <div class="table-responsive">
         <table class="table table-striped">
             <tr>
@@ -11,7 +17,7 @@
                 <th>Email</th>
                 <th class="text-center">Ações</th>
             </tr>
-            <tr data-ng-repeat="contato in contatos.cadastrados">
+            <tr data-ng-repeat="contato in contatos.cadastrados | filter: contatos.filtro">
                 <td>
                     <span data-ng-bind="contato.nome"></span>
                 </td>

@@ -3,6 +3,8 @@ function () {
 
     this.total = 0;
 
+    this.filtro = '';
+
     this.incrementar = function () {
         this.total++;
     };

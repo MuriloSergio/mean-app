@@ -2,6 +2,8 @@
     "ngRoute"
 ]).config(function ($routeProvider) {
     $routeProvider
+        .when("/", { redirectTo: '/contatos' })
         .when("/contatos", { templateUrl: "/views/contatos/consultar.html" })
-        .otherwise({redirectTo: '/pagina-nao-encontrada.html'});
+        .when("/404", { templateUrl: "/views/app/404.html" })
+        .otherwise({ redirectTo: '/404' });
 });
