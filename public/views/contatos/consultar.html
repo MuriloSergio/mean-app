@@ -1,9 +1,22 @@
-﻿<div data-ng-controller="ContatosController as contatos" data-ng-init="contatos.iniciar()">
+﻿<div data-ng-controller="ContatosController as contatos" data-ng-init="contatos.consultar()">
     <div class="jumbotron">
         <h1 class="text-center">Bem-vindo ao Mean App</h1>
     </div>
-    <button class="btn btn-primary" data-ng-click="contatos.incrementar()">Novo</button>
-    <p>Contatos cadastrados: <span data-ng-bind="contatos.total"></span></p>
+    <div class="alert alert-success" role="alert" data-ng-show="contatos.info">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <span data-ng-bind="contatos.info"></span>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success"
+                type="button"
+                data-ng-click="contatos.novo()">
+            Cadastrar
+        </button>
+    </div>
+    <p data-ng-show="contatos.cadastrados.length">Contatos cadastrados: <span data-ng-bind="contatos.cadastrados.length"></span></p>
+    <p data-ng-hide="contatos.cadastrados.length">Não há contatos cadastrados</p>
     <div class="form-group">
         <input class="form-control" 
                data-ng-model="contatos.filtro" 
@@ -25,11 +38,25 @@
                     <span data-ng-bind="contato.email"></span>
                 </td>
                 <td class="text-center">
-                    <button class="btn btn-danger">
-                        Remover
+                    <button class="btn btn-primary"
+                            data-ng-click="contatos.visualizar(contato)"
+                            data-app-tooltip="Visualizar">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    <button class="btn btn-default"
+                            data-ng-click="contatos.selecionar(contato)"
+                            data-app-tooltip="Editar">
+                        <span class="glyphicon glyphicon-edit"></span>
+                    </button>
+                    <button class="btn btn-danger"
+                            data-ng-click="contatos.remover(contato)"
+                            data-app-tooltip="Remover">
+                        <span class="glyphicon glyphicon-trash"></span>
                     </button>
                 </td>
             </tr>
         </table>
     </div>
+    <div ng-include src="'/Views/Contatos/Modal/NovoContato.html'"></div>
+    <div ng-include src="'/Views/Contatos/Modal/Detalhes.html'"></div>
 </div>

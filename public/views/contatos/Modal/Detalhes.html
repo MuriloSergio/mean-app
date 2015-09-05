@@ -1,0 +1,30 @@
+﻿<div class="modal fade" data-app-modal="contatos.modal.detalhes" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Detalhes</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <table class="table table-striped">
+                        <tr>
+                            <td>Nome</td>
+                            <td><span data-ng-bind="contatos.contato.nome"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><span data-ng-bind="contatos.contato.email"></span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default"
+                        type="button"
+                        data-app-modal-dismiss="contatos.modal.detalhes">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

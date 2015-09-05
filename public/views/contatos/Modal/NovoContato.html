@@ -1,0 +1,46 @@
+﻿<div class="modal fade" data-app-modal="contatos.modal.cadastro" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="contatos.form.novoContato" novalidate>
+                <div class="modal-header">
+                    <h4 class="modal-title">Cadastro</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group" data-ng-class="{'has-error': !contatos.contato.nome}">
+                                <label>Nome</label>
+                                <input class="form-control"
+                                       data-ng-model="contatos.contato.nome"
+                                       maxlength="50"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group" data-ng-class="{'has-error': !contatos.contato.email}">
+                                <label>Email</label>
+                                <input class="form-control"
+                                       data-ng-model="contatos.contato.email"
+                                       maxlength="50"
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success"
+                            data-ng-click="contatos.salvar()"
+                            data-ng-disabled="contatos.form.novoContato.$invalid">
+                        <span data-ng-hide="contatos.contato._id">Salvar</span> 
+                        <span data-ng-show="contatos.contato._id">Atualizar</span> 
+                    </button>
+                    <button class="btn btn-default"
+                            type="button"
+                            data-app-modal-dismiss="contatos.modal.cadastro">
+                        Fechar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

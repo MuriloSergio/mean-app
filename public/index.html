@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html data-ng-app="app">
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -9,9 +9,19 @@
 </head>
 <body class="container">
     <div data-ng-view></div>
-    <script src="vendor/angular/angular.min.js"></script>
-    <script src="vendor/angular-route/angular-route.min.js"></script>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/controllers/ContatosController.js"></script>
+    <script src="Vendor/jquery/dist/jquery.min.js"></script>
+    <script src="Vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="Vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="Vendor/angular/angular.min.js"></script>
+    <script src="Vendor/angular-route/angular-route.min.js"></script>
+    <script src="Scripts/AppStart/AppModule.js"></script>
+    <script src="Scripts/AppStart/AppRoutes.js"></script>
+    <script src="Scripts/Services/App/ApiRequestService.js"></script>
+    <script src="Scripts/Services/Contatos/ContatosService.js"></script>
+    <script src="Scripts/Controllers/ContatosController.js"></script>
+    <script src="Scripts/Directives/Componentes/ModalDirective.js"></script>
+    <script src="Scripts/Directives/Componentes/ModalDismissDirective.js"></script>
+    <script src="Scripts/Directives/Componentes/ModalTargetDirective.js"></script>
+    <script src="Scripts/Directives/Componentes/TooltipDirective.js"></script>
 </body>
 </html>
